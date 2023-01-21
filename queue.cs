@@ -1,6 +1,10 @@
-﻿Queue<int> BoardPass1 = new Queue<int>();
+﻿// Create 3 queues.
+
+Queue<int> BoardPass1 = new Queue<int>();
 Queue<int> BoardPass2 = new Queue<int>();
 Queue<int> BoardPass3 = new Queue<int>();
+
+// accept value & select queue
 
 for (int i = 0; i < 10; i++)
 {
@@ -12,6 +16,9 @@ for (int i = 0; i < 10; i++)
         BoardPass2.Enqueue(value);
     else if (BoardPass3.Count < 3)
         BoardPass3.Enqueue(value);
+
+    // if no space in any three queue then dequeueing
+
     else
     {
         Random r = new Random();
@@ -35,6 +42,8 @@ for (int i = 0; i < 10; i++)
     }
 
 }
+
+// print each queue.
 
 Console.WriteLine("Elements of 1st queue:");
 foreach (var item in BoardPass1)
